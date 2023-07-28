@@ -7,20 +7,22 @@ public class RewardValue {
         this.cashValue = cashValue;
     }
 
-
     public RewardValue(int milesValue) {
-        this.milesValue = milesValue;
+        this.cashValue = cashConversion(milesValue);
     }
 
+    public double cashConversion(int milesValue) {
+        return milesValue * 0.0035;
 
-
-
+    }
+    public double milesConversion(double cashValue) {
+        return cashValue * 0.0035;
+    }
     public double getCashValue() {
         return cashValue;
     }
 
-
     public double getMilesValue() {
-        return milesValue;
+        return milesConversion(this.cashValue);
     }
 }
